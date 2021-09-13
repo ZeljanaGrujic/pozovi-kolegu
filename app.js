@@ -14,6 +14,13 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname+ "/public/index.html");
 });
 
+//Ako zelimo da se nakacimo na TURN server preko Twilio
+/*app.get('/api/get-turn-credentials', (req,res)=>{
+
+    const accountSid='';
+    const authToken='';
+    const client=twilio(accountSid,authToken);
+})*/
 
 let connectedPeers=[];
 let connectedPeersStrangers=[];

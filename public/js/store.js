@@ -60,7 +60,7 @@ export const setAllowConnectionsFromStrangers =(allowConnection)=> {
 
                     state={
                         ...state,
-                        callState,
+                        callState
                     }
 
                 }

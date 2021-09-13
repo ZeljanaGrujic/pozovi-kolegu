@@ -17,13 +17,14 @@ import * as strangerUtils from './strangerUtils.js';
 
 //initialization of socketIO connection
 
-const socket= io('/'); // ovako bismo zakucale io('localhost:3000');, ali ako deploy ujemo aplikaciju, port nece biti isti, i onda koristimo / da procitamo bilo koji port
+const socket= io('/');              // ovako bismo zakucale io('localhost:3000');, ali ako deploy ujemo aplikaciju, port nece biti isti, i onda koristimo / da procitamo bilo koji port
 wss.registerSocketEvents(socket);
 
 
 webRTCHandler.getLocalPreview();
 
 //register event for personal code copy button
+
 const personalCodeCopyButton =document.getElementById("personal_code_copy_button");
 // pomocu ove funkcije imamo pristup elementu sa id jem iz zagrade
 personalCodeCopyButton.addEventListener("click", ()=>{
@@ -50,7 +51,9 @@ const calleePersonalCode= document.getElementById("personal_code_input").value;
 
 const callType= constants.callType.CHAT_PERSONAL_CODE;
 
-webRTCHandler.sendPreOffer(callType, calleePersonalCode); //sta saljemo serveru, a to je informacija sa kim zelimo da se konektujemo
+webRTCHandler.sendPreOffer(callType, calleePersonalCode); 
+
+//sta saljemo serveru, a to je informacija sa kim zelimo da se konektujemo
 //,mi saljemo serveru link personal code i sa njim zelimo komunikaciju
 //kad kliknemo na chat ili video on treba da se pozove
 //u nas zahtev ka serveru dodajemo vrednost iz polja za personal code
@@ -140,7 +143,7 @@ newMessageInput.addEventListener('keydown', (event)=>{
 
     if(key==='Enter'){
         webRTCHandler.sendMessageUsingDataChannel(event.target.value);
-        ui.appendMessage(event.target.value,true);
+        ui.appendMessage(event.target.value,true); //kada mi saljemo poruku, kačim tu poruku u čet, a hoću da mi se nađe na desnoj strani, zato kažem true
         newMessageInput.value='';
     }
 })

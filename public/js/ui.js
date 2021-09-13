@@ -40,7 +40,7 @@ export const updateRemoteVideo=(stream)=>{
 
 export const showIncomingCallDialog =(callType, acceptCallHandler, rejectCallHandler) => {
 
-    //ako je video poziv ta poruka iskace ako je chat too
+    //ako je video poziv ta poruka iskace ako je chat onda ta poruka
 
     const callTypeInfo = 
         callType=== constants.callType.CHAT_PERSONAL_CODE ? "Chat" : "Video";
@@ -49,7 +49,6 @@ export const showIncomingCallDialog =(callType, acceptCallHandler, rejectCallHan
 
        const dialog= document.getElementById('dialog');
        //uklanjam sve dijaloge, tako da ne dodje do dijaloga u dijalogu
-       //removing all dialogs inside HTML dialog element
        //zvezdicom sam oznacila kao sve dijaloge
        dialog.querySelectorAll('*').forEach((dialog)=>dialog.remove());
         dialog.appendChild(incomingCallDialog);
@@ -65,7 +64,7 @@ export const showIncomingCallDialog =(callType, acceptCallHandler, rejectCallHan
     }
 
     export const showNoStrangerAvailableDialog =()=>{
-        const infoDialog=elements.getInfoDialog('No stranger available', 'Please try again later');
+        const infoDialog=elements.getInfoDialog('Nema dostupnih kolega', 'Molim Vas, pokušajte kasnije');
 
         if(infoDialog){
             const dialog=document.getElementById('dialog');
@@ -82,18 +81,18 @@ export const showIncomingCallDialog =(callType, acceptCallHandler, rejectCallHan
 
         let infoDialog=null;
         if(preOfferAnswer=== constants.preOfferAnswer.CALL_REJECTED){
-            infoDialog=elements.getInfoDialog('Call rejected',
-            'Callee rejected your call')
+            infoDialog=elements.getInfoDialog('Poziv odbijen',
+            'Kolega je odbio Vaš poziv')
         }
 
         if(preOfferAnswer=== constants.preOfferAnswer.CALLEE_NOT_FOUND){
-            infoDialog=elements.getInfoDialog('Callee not found',
-            'Please check personal code')
+            infoDialog=elements.getInfoDialog('Kolega nije pronađen',
+            'Proverite njegov lični kod')
         }
 
         if(preOfferAnswer=== constants.preOfferAnswer.CALL_UNAVAILABLE){
-            infoDialog=elements.getInfoDialog('Call is not possible',
-            'Callee is probably busy, please try again later')
+            infoDialog=elements.getInfoDialog('Poziv nije moguć',
+            'Kolega je verovatno zauzet, pokušajte kasnije')
         }
 
         if(infoDialog){
@@ -232,7 +231,7 @@ const micOffImgSrc= './utils/images/micOff.png';
     }
 
 
-    //ui after hang up
+    //ui after hang up 
 
    export const updateUIAfterHangUp= (callType)=>{
 

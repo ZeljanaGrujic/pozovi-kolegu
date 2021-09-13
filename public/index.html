@@ -1,29 +1,29 @@
 <html>
     <head>
-<title> Meet the strangers</title>        
+<title> Pozovi kolegu</title>        
 <link rel='stylesheet' href='./css/style.css'>
 </head>
 <body>
     <div class='main_container'>
      <div class='dashboard_container'>
          <div class='logo_container'>
-             <img src='./utils/images/logo.png'></img>
+             <img src='./utils/images/logo.png' width='200'></img>
          </div>
          <div>
              <div class='description_container'>
                  <p class='description_container_paragraph'>
-                     Talk with other user by passing his personal code or talk with strangers
+                    Kontaktiraj kolegu pomoću ličnog koda, ili stupi u kontakt sa bilo kojim dostupnim kolegom!
                  </p>
              </div>
              <div class='personal_code_container'>
                  <div class='personal_code_title_container'>
                      <p class='personal_code_title_paragraph'>
-                         Your personal code
+                          Tvoj lični kod:
                      </p>
                  </div>
                      <div class="personal_code_value_container">
                          <p class="personal_code_value_paragraph" id='personal_code_paragraph'>
-                            DDDDDD
+                            lični kod
                          </p>
                          <button class='personal_code_copy_button' id='personal_code_copy_button'>
                              <img src='./utils/images/copyButton.png'></img>
@@ -32,7 +32,7 @@
              </div>
             </div>
              <div class='personal_code_connecting_container'>
-                 <p class='personal_code_connecting_paragraph'>Personal Code</p>
+                 <p class='personal_code_connecting_paragraph'>Unesite lični kod kolege:</p>
                  <div class='personal_code_connecting_input_container'>
                      <input class='personal_code_input' id='personal_code_input'></input>
                  </div>
@@ -46,7 +46,7 @@
                  </div>
              </div>
              <div class='stranger_connecting_container'>
-                 <p class='stranger_title_container'>Stranger</p>
+                 <p class='stranger_title_container'>Dostupne kolege:</p>
                  <div class='stranger_buttons_container'>
                      <button class='connecting_button' id='stranger_chat_button'>
                          <img src='./utils/images/chatButton.png' class='connecting_buttons_image'></img>
@@ -60,7 +60,7 @@
                  <div class='checkbox_connection' id='allow_strangers_checkbox'>
                      <img id='allow_strangers_checkbox_image' class='display_none' src='./utils/images/check.png'></img>
                  </div>
-                 <p class='checkbox_container_paragraph'>Allow connection from strangers </p>
+                 <p class='checkbox_container_paragraph'>Postani dostupan kolegama :)</p>
              </div>
              <div class='dashboard_blur display_none' id='dashboard_blur'></div> 
              <!-- display_none ne blokira dugmice, a samo display blokira kad smo u pozivu-->
@@ -112,14 +112,14 @@
    <button id='resume_recording_button' class ='display_none'>
     <img src='./utils/images/resume.png'></img>
 </button>
-<button id='stop_recording_button'>Stop recording</button>
+<button id='stop_recording_button'>Prekini snimanje</button>
 </div>
 </div>
 </div>
     <div class='messenger_container'>
         <div class='messages_container' id='messages_container'></div>
         <div class='new_message_container display_none' id='new_message'>
-            <input class='new_message_input' id='new_message_input' type='text' placeholder="Type your message..."></input>
+            <input class='new_message_input' id='new_message_input' type='text' placeholder="Unesite poruku..."></input>
        <button class='send_message_button' id='send_message_button'>
            <img class='send_message_button_image' src='./utils/images/sendMessageButton.png'></img>
        </button>
@@ -141,7 +141,7 @@
     <script src='./js/wss.js' type='module'> </script>
     <script src='./js/webRTCHandler.js' type='module'> </script>
     <script src='./js/recordingUtils.js' type='module'></script>
-    <script src='./js/strangersUtils.js' type='module'></script>
+    <script src='./js/strangerUtils.js' type='module'></script>
     <script src='./js/main.js' type='module'> </script>
 
 

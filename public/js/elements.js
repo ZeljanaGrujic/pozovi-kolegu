@@ -11,7 +11,7 @@
 
     const title= document.createElement('p');
     title.classList.add('dialog_title');
-    title.innerHTML= `Incoming ${callTypeInfo} Call`;
+    title.innerHTML= `Dolazeći ${callTypeInfo} poziv`;
 
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('dialog_image_container');
@@ -84,7 +84,7 @@ export const getCallingDialog=(rejectCallHandler)=> {
 
     const title= document.createElement('p');
     title.classList.add('dialog_title');
-    title.innerHTML= `Calling`;
+    title.innerHTML= `Pozivanje...`;
 
     const imageContainer = document.createElement('div');
     imageContainer.classList.add('dialog_image_container');
